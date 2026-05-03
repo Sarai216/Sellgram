@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sellgram — منصة البيع الرقمي</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <script src="https://kit.fontawesome.com/d5f0c685f3.js" crossorigin="anonymous"></script>
+  <style>
+    .typing-indicator span {
+      display: inline-block; width: 5px; height: 5px;
+      border-radius: 50%; background: #5A7A8A; margin: 0 1px; animation: typingBounce 1.2s infinite;
+    }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingBounce {
+      0%,60%,100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══════════════════════════════════════════════════════════════════ -->
+<nav class="nav">
+  <button class="nav-logo" onclick="navigate('home')">
+    <span class="logo-dot"></span>
+    Sellgram
+  </button>
+  <div class="nav-links">
+    <button class="nav-link active" data-page="home">الرئيسية</button>
+    <button class="nav-link" data-page="dashboard">لوحة التحكم</button>
+    <button class="nav-link" data-page="bot">معاينة البوت</button>
+    <button class="nav-link" data-page="guide">دليل الاستخدام</button>
+    <button class="nav-link" data-page="contact">تواصل معنا</button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════════════════════════════════════════ -->
+<div id="page-home" class="page-view active">
+  <div class="page">
+
+    <!-- Hero -->
+    <section class="hero-section">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        منصة البيع الرقمي عبر تيليغرام
+      </div>
+      <h1 class="hero-title">
+        بيع منتجاتك عبر<br>
+        <em>تيليغرام</em> بسهولة تامة
+      </h1>
+      <p class="hero-desc">
+        ربط تيليغرام بنظام دفع FIB الذكي لبيع الملفات والكورسات تلقائياً — بدون أي تدخل يدوي.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="navigate('dashboard')">
+          <i class="fa-solid fa-play" style="color:#E7FBF3;"></i> ابدأ الآن
+        </button>
+        <button class="btn btn-secondary" onclick="navigate('bot')">
+          <i class="fa-solid fa-eye" style="color:#39C290;"></i> شاهد كيف يعمل
+        </button>
+      </div>
+    </section>
+
+    <!-- Flow Steps -->
+    <div style="text-align:center;margin-bottom:20px;">
+      <h2 style="font-size:18px;font-weight:700;letter-spacing:-0.5px;">كيف يعمل النظام؟</h2>
+      <p style="font-size:14px;color:var(--text2);margin-top:6px;">أربع خطوات بسيطة من الإضافة حتى التسليم</p>
+    </div>
+    <div class="flow-grid">
+      <div class="flow-card">
+        <div class="flow-icon"><i class="fa-solid fa-chalkboard-user" style="color:#02a368;"></i></div>
+        <div class="flow-title">أضف منتجك</div>
+        <div class="flow-desc">أضف ملف PDF أو كورس تيليغرام من لوحة التحكم في ثوانٍ</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon"><i class="fa-solid fa-robot" style="color:#02a368;"></i></div>
+        <div class="flow-title">البوت يعرضه</div>
+        <div class="flow-desc">يظهر المنتج للمشترين في البوت فوراً مع زر الشراء</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon"><i class="fa-solid fa-credit-card" style="color:#02a368;"></i></div>
+        <div class="flow-title">الدفع عبر FIB</div>
+        <div class="flow-desc">المشتري يدفع بكود FIB أو برابط مباشر — آمن وسريع</div>
+      </div>
+      <div class="flow-card">
+        <div class="flow-icon"><i class="fa-solid fa-square-check" style="color:#02a368;"></i></div>
+        <div class="flow-title">التسليم التلقائي</div>
+        <div class="flow-desc">يصل الملف أو رابط الكورس للمشتري تلقائياً فور الدفع</div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">دقيقة لبدء البيع</div></div>
+      <div class="stat-card"><div class="stat-num">5%</div><div class="stat-label">عمولة المنصة فقط</div></div>
+      <div class="stat-card"><div class="stat-num">24/7</div><div class="stat-label">تحصيل تلقائي</div></div>
+      <div class="stat-card"><div class="stat-num">IQD</div><div class="stat-label">دفع محلي عبر FIB</div></div>
+    </div>
+
+  </div>
+
+  <!-- Footer only on home -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-name">Sellgram</div>
+        <p>منصة متكاملة لبيع المنتجات الرقمية عبر تيليغرام مع نظام دفع FIB العراقي — تسليم تلقائي، إدارة ذكية.</p>
+        <div class="footer-socials">
+          <a class="footer-social-btn" title="تيليغرام"><i class="fa-brands fa-telegram" style="color:rgb(14,125,85);"></i></a>
+          <a class="footer-social-btn" title="انستغرام"><i class="fa-brands fa-instagram" style="color:rgb(14,125,85);"></i></a>
+          <a class="footer-social-btn" title="يوتيوب"><i class="fa-brands fa-youtube" style="color:rgb(14,125,85);"></i></a>
+          <a class="footer-social-btn" title="فيسبوك"><i class="fa-brands fa-facebook" style="color:rgb(14,125,85);"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>المنصة</h4>
+        <ul>
+          <li><span onclick="navigate('home')">الرئيسية</span></li>
+          <li><span onclick="navigate('dashboard')">لوحة التحكم</span></li>
+          <li><span onclick="navigate('bot')">معاينة البوت</span></li>
+          <li><span onclick="navigate('guide')">دليل الاستخدام</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>المنتجات</h4>
+        <ul>
+          <li><span>ملفات PDF</span></li>
+          <li><span>كورسات فيديو</span></li>
+          <li><span>مجموعات تيليغرام</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الدعم</h4>
+        <ul>
+          <li><span onclick="navigate('guide')">دليل الاستخدام</span></li>
+          <li><span onclick="navigate('contact')">تواصل معنا</span></li>
+          <li><span>@SellgramSupport</span></li>
+          <li><a href="#">سياسة الخصوصية</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-text">© 2026 Sellgram — جميع الحقوق محفوظة</div>
+      <div class="footer-bottom-badges">
+        <div class="footer-tech-badge"><i class="fa-solid fa-code" style="color:rgb(14,125,85);"></i> Telegram Bot API</div>
+        <div class="footer-tech-badge"><i class="fa-solid fa-credit-card" style="color:rgb(14,125,85);"></i> FIB Payment</div>
+        <div class="footer-tech-badge"><i class="fa-solid fa-database" style="color:rgb(14,125,85);"></i> Supabase</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PAGE: DASHBOARD
+═══════════════════════════════════════════════════════════════════════════════ -->
+<div id="page-dashboard" class="page-view">
+  <div class="page">
+    <div class="dash-layout">
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-logo"><i class="fa-solid fa-code" style="color: rgb(56, 182, 136);"></i> Sellgram</div>
+        <div class="sidebar-item active" data-section="overview" onclick="showSection('overview')">
+          <span class="icon"><i class="fa-solid fa-chart-column" style="color: rgb(14, 125, 85);"></i></span> نظرة عامة
+        </div>
+        <div class="sidebar-item" data-section="products" onclick="showSection('products')">
+          <span class="icon"><i class="fa-solid fa-box-open" style="color: rgb(14, 125, 85);"></i></span> منتجاتي
+          <span class="sidebar-badge">4</span>
+        </div>
+        <div class="sidebar-item" data-section="orders" onclick="showSection('orders')">
+          <span class="icon"><i class="fa-solid fa-list" style="color: rgb(14, 125, 85);"></i></span> الطلبات
+          <span class="sidebar-badge">5</span>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="dash-main">
+
+        <!-- ─ OVERVIEW ─────────────────── -->
+        <div id="section-overview" class="dash-section active">
+          <div class="page-header">
+            <div><h1>نظرة عامة</h1><p>ملخص النشاط</p></div>
+          </div>
+          <div class="metrics-row">
+            <div class="metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-sack-dollar" style="color: rgb(14, 125, 85);"></i></div>
+              <div class="metric-label">إجمالي إيراداتي</div>
+              <div class="metric-value" id="ov-revenue">—</div>
+              <div class="metric-sub">+12% هذا الشهر</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-file-circle-check" style="color: rgb(14, 125, 85);"></i></div>
+              <div class="metric-label">الطلبات المكتملة</div>
+              <div class="metric-value" id="ov-orders">—</div>
+              <div class="metric-sub">آخر 30 يوم</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon"><i class="fa-solid fa-box-open" style="color: rgb(14, 125, 85);"></i></div>
+              <div class="metric-label">المنتجات النشطة</div>
+              <div class="metric-value" id="ov-products">—</div>
+              <div class="metric-sub">في البوت الآن</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title"><i class="fa-solid fa-list" style="color: rgb(14, 125, 85);"></i> آخر الطلبات</span>
+              <button class="btn btn-secondary btn-sm" onclick="showSection('orders')">عرض الكل</button>
+            </div>
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th><th>المنتج</th><th>المشتري</th>
+                    <th>المبلغ</th><th>الحالة</th><th>التاريخ</th>
+                  </tr>
+                </thead>
+                <tbody id="recent-orders-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ PRODUCTS ─────────────────── -->
+        <div id="section-products" class="dash-section">
+          <div class="page-header">
+            <div><h1>منتجاتي</h1><p>إدارة الملفات والكورسات</p></div>
+            <button class="btn btn-primary" onclick="openAddProduct()">+ إضافة منتج</button>
+          </div>
+          <div class="card">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>المنتج</th><th>السعر</th>
+                    <th>المبيعات</th><th>الحالة</th><th>إجراءات</th>
+                  </tr>
+                </thead>
+                <tbody id="products-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ ORDERS ─────────────────── -->
+        <div id="section-orders" class="dash-section">
+          <div class="page-header">
+            <div><h1>طلباتي</h1><p>كل المبيعات</p></div>
+            <select style="padding:8px 12px;border-radius:8px;border:1.5px solid var(--border);background:var(--card);font-family:inherit;font-size:13px;outline:none;" id="order-filter" onchange="renderOrders()">
+              <option value="all">جميع الحالات</option>
+              <option value="pending">قيد الانتظار</option>
+              <option value="paid">مدفوع</option>
+              <option value="delivered">تم التسليم</option>
+              <option value="cancelled">ملغي</option>
+            </select>
+          </div>
+          <div class="card">
+            <div style="overflow-x:auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>#</th><th>المنتج</th><th>المشتري (ID)</th>
+                    <th>المبلغ</th><th>الحالة</th><th>التاريخ</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-body"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PAGE: BOT
+═══════════════════════════════════════════════════════════════════════════════ -->
+<div id="page-bot" class="page-view">
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1>معاينة البوت</h1>
+        <p>اضغط على الأزرار تماماً كما يفعل الزبون الحقيقي — المحادثة تتحدث تلقائياً</p>
+      </div>
+    </div>
+
+    <div class="bot-page-layout">
+      <!-- Phone -->
+      <div class="bot-phone-wrap">
+        <div class="phone">
+          <div class="phone-header">
+            <div class="phone-av">S</div>
+            <div>
+              <div class="phone-name">Sellgram Bot</div>
+              <div class="phone-status" id="bot-status">بوت</div>
+            </div>
+            <button onclick="resetBot()" style="margin-right:auto;background:none;border:none;color:#5A7A8A;font-size:10px;cursor:pointer;">↺ إعادة</button>
+          </div>
+          <div class="phone-body" id="chat-body">
+            <div class="tm-bot" id="msg-welcome">
+              <p>أهلاً! أنا بوت البيع الخاص بك 📚</p>
+              <p style="margin-top:4px;">اختر ما تريد:</p>
+              <div class="tg-btn" id="btn-pdf" onclick="chatStep('pdf')">📄 ملخصات دراسية</div>
+              <div class="tg-btn" id="btn-course" onclick="chatStep('course')">🎓 كورسات</div>
+              <div class="tg-btn">ℹ️ عن البائع</div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-label" id="chat-label">1 — اختر ما تريد</div>
+
+        <!-- Tips -->
+        <div class="bot-tips-card">
+          <div class="tips-title">💡 جرب الآن</div>
+          <div class="tip-line">① اضغط <strong style="color:#fff;">ملخصات دراسية</strong></div>
+          <div class="tip-line">② اختر ملخص واضغط شراء</div>
+          <div class="tip-line">③ اضغط <strong style="color:#00C37A;">ادفع عبر FIB</strong></div>
+          <div class="tip-line">④ شوف الملف يوصل تلقائياً 📥</div>
+          <div class="bot-tips-sep"></div>
+          <div class="tip-line">① اضغط <strong style="color:#fff;">كورسات</strong></div>
+          <div class="tip-line">② اضغط <strong style="color:#00C37A;">ادفع عبر FIB</strong></div>
+          <div class="tip-line">③ شوف رابط القناة يوصل 🔗</div>
+        </div>
+      </div>
+
+      <!-- After-buy info -->
+      <div>
+        <div class="card" style="margin-bottom:16px;">
+          <h3 style="font-size:15px;font-weight:700;margin-bottom:4px;">ماذا يحدث بعد الدفع؟</h3>
+          <p style="font-size:13px;color:var(--text2);margin-bottom:18px;">نظام التسليم التلقائي يعمل فور تأكيد FIB للدفع</p>
+
+          <!-- PDF delivery -->
+          <div style="background:var(--green-light);border-radius:var(--radius);padding:16px;margin-bottom:14px;">
+            <div style="font-size:13px;font-weight:600;color:var(--green-dark);margin-bottom:10px;">📄 تسليم ملف PDF</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+                <div style="font-size:13px;">FIB يرسل webhook لتأكيد الدفع</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+                <div style="font-size:13px;">النظام يجلب الملف من Supabase Storage</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+                <div style="font-size:13px;">الملف يُرسَل للمشتري عبر Telegram API</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
+                <div style="font-size:13px;">الطلب يُحدَّث إلى "تم التسليم" تلقائياً</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course delivery -->
+          <div style="background:#E6F4FF;border-radius:var(--radius);padding:16px;">
+            <div style="font-size:13px;font-weight:600;color:#0958D9;margin-bottom:10px;">🎓 تسليم رابط الكورس</div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:#0958D9;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+                <div style="font-size:13px;">FIB يؤكد الدفع ويرسل webhook</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:#0958D9;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+                <div style="font-size:13px;">النظام يجلب رابط مجموعة تيليغرام الخاصة</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:22px;height:22px;border-radius:50%;background:#0958D9;color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+                <div style="font-size:13px;">الرابط يُرسَل للمشتري — صالح مرة واحدة فقط</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seller notification -->
+        <div class="card">
+          <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;">📩 إشعارك كبائع</h3>
+          <p style="font-size:13px;color:var(--text2);margin-bottom:12px;">فور إتمام أي بيع، تتلقى إشعاراً على تيليغرام يحتوي على:</p>
+          <div style="background:#1F2C38;border-radius:10px;padding:12px;">
+            <div style="color:#E2E8F0;font-size:11px;line-height:1.9;">
+              🎉 <strong>بيعة جديدة!</strong><br>
+              📦 المنتج: ملخص المحاسبة الإدارية<br>
+              👤 المشتري: <code style="color:#6AB3F3;">791234567</code><br>
+              <span style="font-size:9px;color:#5A7A8A;">تم التسليم تلقائياً ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PAGE: GUIDE
+═══════════════════════════════════════════════════════════════════════════════ -->
+<div id="page-guide" class="page-view">
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1>دليل الاستخدام</h1>
+        <p>كل ما تحتاجه لتبدأ البيع بشكل صحيح</p>
+      </div>
+    </div>
+
+    <div class="guide-layout">
+      <!-- Side nav -->
+      <nav class="guide-nav">
+        <div class="guide-nav-title">الأقسام</div>
+        <button class="guide-nav-item active" data-section="start" onclick="showGuideSection('start')">
+          <i class="fa-solid fa-rocket" style="color: rgb(14, 125, 85);"></i> البداية السريعة
+        </button>
+        <button class="guide-nav-item" data-section="products" onclick="showGuideSection('products')">
+          <i class="fa-solid fa-box-open" style="color: rgb(14, 125, 85);"></i> إضافة المنتجات
+        </button>
+        <button class="guide-nav-item" data-section="payment" onclick="showGuideSection('payment')">
+          <i class="fa-solid fa-credit-card" style="color: rgb(14, 125, 85);"></i> نظام الدفع FIB
+        </button>
+        <button class="guide-nav-item" data-section="orders" onclick="showGuideSection('orders')">
+          <i class="fa-solid fa-list" style="color: rgb(14, 125, 85);"></i> إدارة الطلبات
+        </button>
+        <button class="guide-nav-item" data-section="faq" onclick="showGuideSection('faq')">
+          <i class="fa-solid fa-question" style="color: rgb(14, 125, 85);"></i> الأسئلة الشائعة
+        </button>
+      </nav>
+
+      <!-- Content -->
+      <div class="guide-content">
+
+        <!-- ─ START ─── -->
+        <div id="guide-start" class="guide-section active">
+          <div class="guide-card">
+            <h3><i class="fa-solid fa-rocket" style="color: rgb(14, 125, 85);"></i> البداية السريعة</h3>
+            <div class="guide-step">
+              <div class="guide-step-num">1</div>
+              <div class="guide-step-body">
+                <h4>إنشاء بوت تيليغرام</h4>
+                <p>افتح تيليغرام وابحث عن <code>@BotFather</code>، أرسل <code>/newbot</code> واتبع الخطوات. احتفظ بـ <strong>Bot Token</strong> لأنك ستحتاجه.</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="guide-step-num">2</div>
+              <div class="guide-step-body">
+                <h4>ربط البوت بالمنصة</h4>
+                <p>أضف الـ Token في إعدادات المنصة. سيتم تفعيل البوت تلقائياً وربطه بنظام الدفع FIB.</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="guide-step-num">3</div>
+              <div class="guide-step-body">
+                <h4>إضافة أول منتج</h4>
+                <p>من <strong>لوحة التحكم → منتجاتي</strong>، اضغط "إضافة منتج"، اختر النوع (PDF أو كورس)، وعبّئ البيانات.</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="guide-step-num">4</div>
+              <div class="guide-step-body">
+                <h4>شارك رابط البوت</h4>
+                <p>شارك رابط البوت مع عملائك. كل من يفتح البوت سيرى منتجاتك ويتمكن من الشراء مباشرة.</p>
+              </div>
+            </div>
+            <div class="guide-tip">
+              <i class="fa-solid fa-lightbulb" style="color: rgb(14, 125, 85);"></i> <strong>نصيحة:</strong> جرب عملية الشراء كاملة من صفحة "معاينة البوت" قبل مشاركة الرابط مع العملاء.
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ PRODUCTS ─── -->
+        <div id="guide-products" class="guide-section">
+          <div class="guide-card">
+            <h3><i class="fa-solid fa-box-open" style="color: rgb(14, 125, 85);"></i> إضافة المنتجات</h3>
+
+            <div style="background:var(--green-light);border-radius:var(--radius);padding:16px;margin-bottom:16px;">
+              <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:12px;"><i class="fa-solid fa-file-arrow-down" style="color: rgb(14, 125, 92);"></i> نوع 1: ملف PDF</div>
+              <div class="guide-step" style="padding:8px 0;">
+                <div class="guide-step-num">1</div>
+                <div class="guide-step-body"><h4>ارفع الملف</h4><p>ارفع ملف PDF إلى Supabase Storage في bucket اسمه <code>products</code>.</p></div>
+              </div>
+              <div class="guide-step" style="padding:8px 0;">
+                <div class="guide-step-num">2</div>
+                <div class="guide-step-body"><h4>أضف المسار</h4><p>انسخ مسار الملف مثل: <code>pdfs/accounting.pdf</code> وأضفه في حقل المسار.</p></div>
+              </div>
+              <div class="guide-step" style="padding:8px 0; border-bottom:none;">
+                <div class="guide-step-num">3</div>
+                <div class="guide-step-body"><h4>فعّل المنتج</h4><p>اضبط الحالة على "مفعّل" ليظهر للمشترين في البوت فوراً.</p></div>
+              </div>
+            </div>
+
+            <div style="background:#f1fbfb;border-radius:var(--radius);padding:16px;">
+              <div style="font-size:13px;font-weight:700;color:#0d3234;margin-bottom:12px;"><i class="fa-solid fa-person-chalkboard" style="color: rgb(14, 66, 125);"></i> نوع 2: كورس (مجموعة تيليغرام)</div>
+              <div class="guide-step" style="padding:8px 0;">
+                <div class="guide-step-num">1</div>
+                <div class="guide-step-body"><h4>أنشئ مجموعة خاصة</h4><p>أنشئ مجموعة تيليغرام خاصة لكورسك وأضف البوت كمشرف.</p></div>
+              </div>
+              <div class="guide-step" style="padding:8px 0;">
+                <div class="guide-step-num">2</div>
+                <div class="guide-step-body"><h4>احصل على رابط الدعوة</h4><p>من إعدادات المجموعة، أنشئ رابط دعوة <code>https://t.me/+xxxxx</code></p></div>
+              </div>
+              <div class="guide-step" style="padding:8px 0; border-bottom:none;">
+                <div class="guide-step-num">3</div>
+                <div class="guide-step-body"><h4>أضف الرابط للمنتج</h4><p>عند إضافة المنتج، ضع الرابط في حقل "رابط مجموعة تيليغرام". سيُرسَل تلقائياً بعد الدفع.</p></div>
+              </div>
+            </div>
+            <div class="guide-warn">
+              <i class="fa-solid fa-triangle-exclamation" style="color: rgb(125, 55, 14);"></i> <strong>مهم:</strong> يُنصح بتجديد رابط الدعوة بعد كل عملية بيع لمنع الوصول غير المصرح به.
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ PAYMENT ─── -->
+        <div id="guide-payment" class="guide-section">
+          <div class="guide-card">
+            <h3><i class="fa-solid fa-credit-card" style="color: rgb(14, 125, 85);"></i> نظام الدفع FIB</h3>
+            <div class="guide-step">
+              <div class="guide-step-num">1</div>
+              <div class="guide-step-body">
+                <h4>إعداد حساب FIB</h4>
+                <p>سجّل في منصة FIB للمطورين واحصل على بيانات الاعتماد: <code>Client ID</code> و <code>Client Secret</code>.</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="guide-step-num">2</div>
+              <div class="guide-step-body">
+                <h4>إعداد Webhook</h4>
+                <p>أضف عنوان الـ webhook الخاص بمنصتك في إعدادات FIB. سيُرسَل إشعار تلقائي عند كل دفعة ناجحة.</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="guide-step-num">3</div>
+              <div class="guide-step-body">
+                <h4>كيف يعمل مع المشتري؟</h4>
+                <p>المشتري يضغط "ادفع عبر FIB"، يدفع من تطبيق FIB، ويتلقى المنتج تلقائياً خلال ثوانٍ.</p>
+              </div>
+            </div>
+            <div class="guide-tip">
+              <i class="fa-solid fa-lightbulb" style="color: rgb(14, 125, 85);"></i> جميع المدفوعات تتم بالدينار العراقي (IQD). العمولة 5% من كل عملية بيع.
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ ORDERS ─── -->
+        <div id="guide-orders" class="guide-section">
+          <div class="guide-card">
+            <h3><i class="fa-solid fa-list" style="color: rgb(14, 125, 85);"></i> إدارة الطلبات</h3>
+            <p style="font-size:13px;color:var(--text2);margin-bottom:16px;">يمكنك متابعة حالة كل طلب من قسم "طلباتي" في لوحة التحكم.</p>
+
+            <div style="display:grid;gap:10px;">
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:var(--radius-sm);">
+                <span class="badge badge-orange">قيد الانتظار</span>
+                <span style="font-size:13px;color:var(--text2);">الطلب مسجّل، في انتظار تأكيد الدفع من FIB.</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:var(--radius-sm);">
+                <span class="badge badge-green">مدفوع</span>
+                <span style="font-size:13px;color:var(--text2);">تم الدفع وجاري إرسال المنتج للمشتري.</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:var(--radius-sm);">
+                <span class="badge badge-blue">تم التسليم</span>
+                <span style="font-size:13px;color:var(--text2);">وصل المنتج للمشتري بنجاح. العملية مكتملة.</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg);border-radius:var(--radius-sm);">
+                <span class="badge badge-red">ملغي</span>
+                <span style="font-size:13px;color:var(--text2);">الطلب ملغي، لم يتم الدفع أو تم الإلغاء.</span>
+              </div>
+            </div>
+
+            <div class="guide-tip" style="margin-top:16px;">
+              <i class="fa-solid fa-lightbulb" style="color: rgb(14, 125, 85);"></i> لا تحتاج لأي إجراء يدوي — النظام يدير التسليم والحالات تلقائياً.
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ FAQ ─── -->
+        <div id="guide-faq" class="guide-section">
+          <div class="guide-card">
+            <h3><i class="fa-solid fa-question" style="color: rgb(14, 125, 85);"></i> الأسئلة الشائعة</h3>
+
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                هل يمكنني بيع أكثر من منتج بنفس الوقت؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">نعم، يمكنك إضافة عدد غير محدود من المنتجات (PDFs وكورسات). جميعها ستظهر للمشترين في البوت.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                ماذا يحدث إذا لم يصل المنتج للمشتري؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">في حال فشل الإرسال، ستتلقى إشعاراً فورياً. يمكنك إعادة الإرسال يدوياً من قسم الطلبات أو التواصل مع الدعم.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                كيف أجدد رابط الكورس بعد البيع؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">من لوحة التحكم → منتجاتي، اضغط على أيقونة التعديل بجانب المنتج وأدخل الرابط الجديد. سيُستخدَم في عمليات البيع القادمة.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                هل أستطيع إخفاء منتج مؤقتاً دون حذفه؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">نعم، عبر خيار "مسودة" في حالة المنتج. لن يظهر في البوت لكن بياناته محفوظة ويمكنك تفعيله لاحقاً.</div>
+            </div>
+
+            <div class="faq-item">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                متى أتلقى أموال المبيعات؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">المبالغ تُحوَّل مباشرة لحسابك في FIB فور تأكيد كل دفعة، مطروحاً منها عمولة المنصة 5%.</div>
+            </div>
+
+            <div class="faq-item" style="border-bottom:none;">
+              <div class="faq-q" onclick="toggleFaq(this)">
+                هل يدعم النظام العملاء خارج العراق؟
+                <span class="faq-arrow">▼</span>
+              </div>
+              <div class="faq-a">حالياً، نظام الدفع FIB متاح للعراق فقط. نعمل على إضافة طرق دفع دولية قريباً.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page-view">
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1>تواصل معنا</h1>
+        <p>هل واجهت مشكلة أو تحتاج مساعدة؟ نحن هنا لمساعدتك</p>
+      </div>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Info -->
+      <div>
+        <div class="card contact-info" style="margin-bottom:16px;">
+          <div class="card-title" style="margin-bottom:16px;">معلومات الدعم</div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope" style="color: rgb(14, 125, 85);"></i></div>
+            <div>
+              <div class="info-label">البريد الإلكتروني</div>
+              <div class="info-val">support@sellgram.iq</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-brands fa-telegram" style="color: rgb(14, 125, 85);"></i></div>
+            <div>
+              <div class="info-label">تيليغرام للدعم</div>
+              <div class="info-val">@SellgramSupport</div>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-clock" style="color: rgb(14, 125, 85);"></i></div>
+            <div>
+              <div class="info-label">أوقات الدعم</div>
+              <div class="info-val">9 صباحاً — 9 مساءً يومياً</div>
+            </div>
+          </div>
+          <div class="info-item" style="margin-bottom:0;">
+            <div class="info-icon"><i class="fa-solid fa-hourglass-half" style="color: rgb(14, 125, 85);"></i></div>
+            <div>
+              <div class="info-label">متوسط وقت الرد</div>
+              <div class="info-val">خلال ساعتين</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick links -->
+        <div class="card">
+          <div class="card-title" style="margin-bottom:12px;"><i class="fa-solid fa-link" style="color: rgb(14, 125, 85);"></i> روابط مفيدة</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <button class="btn btn-secondary btn-sm" style="justify-content:flex-start;" onclick="navigate('guide')">
+              <i class="fa-brands fa-leanpub" style="color: rgb(38, 185, 131);"></i> دليل الاستخدام
+            </button>
+            <button class="btn btn-secondary btn-sm" style="justify-content:flex-start;" onclick="navigate('bot')">
+              <i class="fa-solid fa-robot" style="color: rgb(59, 192, 143);"></i> معاينة البوت
+            </button>
+            <button class="btn btn-secondary btn-sm" style="justify-content:flex-start;" onclick="navigate('dashboard')">
+              <i class="fa-solid fa-chart-column" style="color: rgb(68, 211, 159);"></i> لوحة التحكم
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <div class="card" id="contact-form-wrap">
+          <div class="card-title" style="margin-bottom:16px;"><i class="fa-solid fa-handshake-angle" style="color: rgb(14, 125, 85);"></i> أرسل رسالة للدعم</div>
+          <div class="field">
+            <label>الاسم الكامل *</label>
+            <input type="text" id="cf-name" placeholder="محمد علي">
+          </div>
+          <div class="field">
+            <label>البريد الإلكتروني *</label>
+            <input type="email" id="cf-email" placeholder="you@example.com" dir="ltr">
+          </div>
+          <div class="field">
+            <label>موضوع الرسالة *</label>
+            <select id="cf-subject">
+              <option value="">اختر الموضوع...</option>
+              <option>مشكلة تقنية في البوت</option>
+              <option>مشكلة في نظام الدفع FIB</option>
+              <option>استفسار عن المنتجات</option>
+              <option>مشكلة في تسليم طلب</option>
+              <option>اقتراح أو ملاحظة</option>
+              <option>أخرى</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>تفاصيل الرسالة *</label>
+            <textarea id="cf-message" placeholder="اشرح مشكلتك أو استفسارك بتفصيل..." style="height:120px;"></textarea>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="submitContactForm()">
+            إرسال الرسالة <i class="fa-solid fa-envelope" style="color: rgb(255, 255, 255);"></i>
+          </button>
+        </div>
+
+        <!-- Success state -->
+        <div class="card contact-success" id="contact-success">
+          <div class="success-icon"><i class="fa-solid fa-square-check" style="color: rgb(14, 125, 85);"></i></div>
+          <h3>تم إرسال رسالتك بنجاح!</h3>
+          <p>سيتواصل معك فريق الدعم خلال ساعتين على البريد الإلكتروني أو تيليغرام.</p>
+          <button class="btn btn-secondary" style="margin-top:16px;" onclick="resetContactForm()">
+            إرسال رسالة أخرى
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     MODALS
+═══════════════════════════════════════════════════════════════════════════════ -->
+
+<!-- Add Product Modal -->
+<div class="modal-overlay" id="modal-add-product">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title"><i class="fa-solid fa-plus" style="color: rgb(14, 125, 85);"></i> إضافة منتج جديد</span>
+      <button class="modal-close" onclick="closeModal('modal-add-product')">✕</button>
+    </div>
+    <form id="add-product-form" onsubmit="return false;">
+      <div style="margin-bottom:16px;">
+        <div class="field" style="margin-bottom:8px;"><label>نوع المنتج *</label></div>
+        <div class="type-grid">
+          <div class="type-opt selected" data-type="pdf" onclick="selectProductType('pdf')">
+            <div class="ticon"><i class="fa-solid fa-file-arrow-down" style="color: rgb(14, 125, 85);"></i></div>
+            <div class="tname">ملف PDF</div>
+            <div class="tdesc">ملف يُرسَل للمشتري مباشرةً</div>
+          </div>
+          <div class="type-opt" data-type="course" onclick="selectProductType('course')">
+            <div class="ticon"><i class="fa-solid fa-person-chalkboard" style="color: rgb(14, 125, 85);"></i></div>
+            <div class="tname">كورس (مجموعة)</div>
+            <div class="tdesc">رابط مجموعة تيليغرام خاصة</div>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>اسم المنتج *</label>
+        <input type="text" id="ap-name" placeholder="مثال: كورس Python المتقدم">
+      </div>
+      <div class="field">
+        <label>السعر (بالدينار العراقي) *</label>
+        <input type="number" id="ap-price" placeholder="25000" dir="ltr">
+      </div>
+      <div id="add-pdf-section">
+        <div class="file-upload-section">
+          <label style="display:block;margin-bottom:10px;"><i class="fa-solid fa-file-arrow-down" style="color: rgb(14, 125, 85);"></i> الملف</label>
+          <div class="upload-zone" id="ep-drop-zone" onclick="document.getElementById('ep-file-input').click()">
+            <div class="upload-icon"><i class="fa-solid fa-cloud" style="color: rgb(202, 235, 222);"></i></div>
+            <p>رفع ملف بديل (اختياري)</p>
+            <p class="upload-hint">PDF فقط</p>
+          </div>
+          <input type="file" accept=".pdf" style="display:none;" id="ep-file-input">
+            <input type="file" accept=".pdf" style="display:none;" id="ap-file-input"
+              onchange="document.getElementById('ap-pdf-path').value = this.files[0]?.name || ''">
+          </div>
+          <div class="or-divider">أو</div>
+          <div class="field" style="margin:0;">
+            <input type="text" id="ap-pdf-path" placeholder="مسار الملف: pdfs/file.pdf" dir="ltr">
+          </div>
+        </div>
+      </div>
+      <div id="add-course-section" style="display:none;">
+        <div class="file-upload-section">
+          <label style="display:block;margin-bottom:10px;"><i class="fa-solid fa-link" style="color: rgb(14, 125, 85);"></i> رابط مجموعة تيليغرام</label>
+          <div class="field" style="margin:0;">
+            <input type="text" id="ap-tg-link" placeholder="https://t.me/+xxxxxxxxxx" dir="ltr">
+          </div>
+          <div class="field-hint" style="margin-top:8px;"><i class="fa-solid fa-thumbtack" style="color: rgb(14, 125, 85);"></i> سيُرسَل تلقائياً للمشتري بعد الدفع.</div>
+        </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-add-product')">إلغاء</button>
+      <button class="btn btn-primary" onclick="submitAddProduct()">إضافة المنتج <i class="fa-solid fa-square-check" style="color: rgb(255, 255, 255);"></i></button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit Product Modal -->
+<div class="modal-overlay" id="modal-edit-product">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="modal-title" id="modal-edit-title">تعديل المنتج</span>
+      <button class="modal-close" onclick="closeModal('modal-edit-product')">✕</button>
+    </div>
+    <div style="margin-bottom:16px;">
+      <div class="field" style="margin-bottom:8px;"><label>نوع المنتج</label></div>
+      <div class="type-grid">
+        <div class="type-opt" data-type="pdf" onclick="selectEditProductType('pdf')">
+          <div class="ticon"><i class="fa-solid fa-file-arrow-down" style="color: rgb(14, 125, 85);"></i></div><div class="tname">ملف PDF</div><div class="tdesc">ملف يُرسَل للمشتري</div>
+        </div>
+        <div class="type-opt" data-type="course" onclick="selectEditProductType('course')">
+          <div class="ticon"><i class="fa-solid fa-person-chalkboard" style="color: rgb(14, 125, 85);"></i></div><div class="tname">كورس (مجموعة)</div><div class="tdesc">رابط مجموعة تيليغرام</div>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <label>اسم المنتج</label>
+      <input type="text" id="ep-name">
+    </div>
+    <div class="field">
+      <label>السعر (د.ع)</label>
+      <input type="number" id="ep-price" dir="ltr">
+    </div>
+    <!-- PDF section -->
+    <div id="ep-pdf-section">
+      <div class="file-upload-section">
+        <label style="display:block;margin-bottom:6px;"><i class="fa-solid fa-file-arrow-down" style="color: rgb(14, 125, 85);"></i> الملف الحالي</label>
+        <div style="font-size:11px;color:var(--text3);background:var(--bg);padding:7px 10px;border-radius:6px;margin-bottom:10px;" id="ep-pdf-current"></div>
+        <div class="upload-zone" id="ep-drop-zone" onclick="document.getElementById('ep-file-input').click()">
+          <div class="upload-icon"><i class="fa-solid fa-cloud" style="color: rgb(202, 235, 222);"></i></div>
+          <p>رفع ملف بديل (اختياري)</p>
+          <p class="upload-hint">PDF فقط</p>
+        </div>
+        <input type="file" accept=".pdf" style="display:none;" id="ep-file-input">
+        <div class="or-divider">أو</div>
+        <input type="text" id="ep-pdf-path" dir="ltr" style="width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;padding:8px 10px;font-size:12px;font-family:inherit;" placeholder="pdfs/file.pdf أو file_id">
+      </div>
+    </div>
+    <!-- Course section -->
+    <div id="ep-course-section" style="display:none;">
+      <div class="file-upload-section">
+        <label style="display:block;margin-bottom:6px;"><i class="fa-solid fa-link" style="color: rgb(14, 125, 85);"></i> الرابط الحالي</label>
+        <div style="font-size:11px;color:var(--text3);background:var(--bg);padding:7px 10px;border-radius:6px;margin-bottom:10px;direction:ltr;text-align:left;" id="ep-tg-current"></div>
+        <div class="field" style="margin:0;">
+          <input type="text" id="ep-tg-link" placeholder="https://t.me/+newlink" dir="ltr">
+        </div>
+      </div>
+    </div>
+    <!--  FOOTER BUTTONS -->
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('modal-edit-product')">إلغاء</button>
+      <button class="btn btn-primary" onclick="submitEditProduct()">حفظ التعديلات <i class="fa-solid fa-square-check" style="color: rgb(249, 253, 251);"></i></button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div id="toast-container" class="toast-container"></div>
+
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/bot.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/guide.js"></script>
+<script>
+  document.getElementById('ap-drop-zone')?.addEventListener('click', () => {
+    document.getElementById('ap-file-input').click();
+  });
+</script>
+</body>
+</html>

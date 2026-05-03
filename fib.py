@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-FIB_BASE_URL = os.getenv("FIB_BASE_URL", "https://fib.iq/openapi")
-FIB_CLIENT_ID = os.getenv("FIB_CLIENT_ID")
+FIB_BASE_URL      = os.getenv("FIB_BASE_URL", "https://fib.iq/openapi")
+FIB_CLIENT_ID     = os.getenv("FIB_CLIENT_ID")
 FIB_CLIENT_SECRET = os.getenv("FIB_CLIENT_SECRET")
-WEBHOOK_BASE_URL = os.getenv("WEBHOOK_BASE_URL")
+WEBHOOK_BASE_URL  = os.getenv("WEBHOOK_BASE_URL")
 
 _token_cache = {"token": None}
 
@@ -20,8 +20,8 @@ def get_fib_token() -> str:
     response = requests.post(
         f"{FIB_BASE_URL}/auth/token",
         data={
-            "grant_type": "client_credentials",
-            "client_id": FIB_CLIENT_ID,
+            "grant_type":    "client_credentials",
+            "client_id":     FIB_CLIENT_ID,
             "client_secret": FIB_CLIENT_SECRET,
         },
     )
@@ -40,11 +40,11 @@ def create_payment(amount: int, order_id: int, description: str) -> dict:
 
     payload = {
         "monetaryValue": {
-            "amount": amount,
+            "amount":   amount,
             "currency": "IQD"
         },
         "statusCallbackUrl": f"{WEBHOOK_BASE_URL}/webhook/fib",
-        "description": description,
+        "description":       description,
     }
 
     response = requests.post(
